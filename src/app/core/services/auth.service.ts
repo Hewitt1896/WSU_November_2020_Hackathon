@@ -100,6 +100,7 @@ export class AuthService {
 
   public signOut() {
     this.afAuth.auth.signOut().then(() => {
+      this.isLoggedIn = false;
       this.router.navigateByUrl('');
     });
   }
