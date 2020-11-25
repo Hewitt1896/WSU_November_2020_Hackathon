@@ -1,0 +1,64 @@
+<mat-toolbar>
+    <h2>Create Tournament</h2>
+</mat-toolbar>
+<form [formGroup]="formGroup">
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+        <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="2vw" fxLayout.xs="column">
+            <mat-form-field appearance="outline">
+                <mat-label>Tournament Name</mat-label>
+                <input matInput #name maxlength="30" type="text" formControlName="nameCtrl">
+                <mat-hint align="end">{{name.value?.length || 0}}/30</mat-hint>
+                <mat-error *ngIf="nameControl().hasError('required')"> Display name is
+                    <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Course</mat-label>
+                <mat-select formControlName="courseCtrl">
+                    <mat-option *ngFor="let course of courses" [value]="course">
+                        {{course.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="courseControl().hasError('required')"> Age is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Players</mat-label>
+                <mat-select formControlName="playerCtrl">
+                    <mat-option *ngFor="let player of players" [value]="player.displayName">
+                        {{player.displayName}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="playerControl().hasError('required')"> Age is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="2vw" fxLayout.xs="column">
+            <span>Add Course</span>
+            <span><button class="add-button" mat-mini-fab color="accent" (click)="addCourse(courseControl().value)">
+                    <mat-icon>plus_one</mat-icon>
+                </button>
+            </span>
+            <ng-container *ngIf="addCourses.length > 0">
+                <h2>Courses Added</h2>
+                <mat-nav-list>
+                    <a mat-list-item *ngFor="let addCourse of addCourses"> {{ addCourse.name }} </a>
+                </mat-nav-list>
+            </ng-container>
+            <span>Add Player</span>
+            <span><button class="add-button" mat-mini-fab color="accent" (click)="addPlayer(playerControl().value)">
+                    <mat-icon>plus_one</mat-icon>
+                </button>
+            </span>
+            <ng-container *ngIf="addPlayers.length > 0">
+                <h2>Players Added</h2>
+                <mat-nav-list>
+                    <a mat-list-item *ngFor="let addPlayer of addPlayers"> {{ addPlayer.displayName }} </a>
+                </mat-nav-list>
+            </ng-container>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <button (click)="submit()" type="submit" class="btn-hover">Submit</button>
+    </div>
+</form>

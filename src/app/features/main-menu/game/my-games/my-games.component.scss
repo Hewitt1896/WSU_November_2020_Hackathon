@@ -1,0 +1,32 @@
+.mat-expansion-panel-header-title {
+  margin: 0 auto;
+}
+.flex-title {
+  margin: 0 auto;
+}
+
+mat-icon {
+  left: 1%;
+  bottom: 25%;
+  position: absolute;
+}
+@media only screen and (max-width: 1000px) {
+  .mat-icon {
+    position: absolute;
+    left: 10vw;
+    bottom: 1rem;
+  }
+  .game-name {
+    position: absolute;
+    left: 20vw;
+  }
+}
+div {
+  margin: 5vh 0 5vh;
+}
+@media only screen and (min-width: 1001px) {
+  .mat-expansion-panel {
+    width: 90%;
+    margin-left: 5% !important;
+  }
+}

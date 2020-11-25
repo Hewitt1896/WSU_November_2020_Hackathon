@@ -1,0 +1,11 @@
+<span *ngFor="let game of completedGames;let i = index">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span>{{game.name}}</span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-players-table [dataArray]="game.players"></app-players-table>
+        <app-course-table [dataArray]="game.courses"></app-course-table>
+    </mat-expansion-panel>
+</span>

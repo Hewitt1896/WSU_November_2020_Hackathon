@@ -1,0 +1,16 @@
+div a {
+  cursor: pointer;
+}
+
+div {
+  margin: 5vh 0 5vh;
+}
+@media only screen and (min-width: 1001px) {
+  .mat-expansion-panel {
+    width: 90%;
+    margin-left: 5% !important;
+  }
+}
+.mat-icon {
+  color: green;
+}

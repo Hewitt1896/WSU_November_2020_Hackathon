@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { slideInAnimation } from 'src/app/shared/animations';
 import { RouterOutlet } from '@angular/router';
+import { GameDomainService } from '../../../core/services/domain-service/game-domain.service';
 
 @Component({
   selector: 'app-game',
@@ -14,6 +15,7 @@ export class GameComponent implements OnInit {
 
 
   constructor(
+    private gameDomainService: GameDomainService
   ) { }
 
   ngOnInit(): void {

@@ -1,0 +1,16 @@
+<div>
+<span *ngFor="let game of ongoingGames;let i = index">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>             
+                <span>{{game.name}}</span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+           <div><a (click)="joinGame(i)" matTooltip="Join Game" matTooltipPosition="above"
+                        routerLinkActive="active">
+                        <mat-icon>add</mat-icon>                    </a></div>
+        <app-players-table [dataArray]="game.players"></app-players-table>
+        <app-course-table [dataArray]="game.courses"></app-course-table>
+    </mat-expansion-panel>
+</span>
+</div>

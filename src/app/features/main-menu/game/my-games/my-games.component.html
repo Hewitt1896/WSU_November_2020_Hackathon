@@ -1,0 +1,19 @@
+<div>
+<span *ngFor="let game of myGames;let i = index">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <div class="flex-title" fxLayout="row" fxLayoutAlign="center center">
+                    <div><a [routerLink]="['/main-menu/edit-game', i]" matTooltip="Edit" matTooltipPosition="above"
+                            routerLinkActive="active">
+                            <mat-icon>build</mat-icon>
+                        </a></div>
+                    <span class="game-name">{{game.name}}</span>
+                </div>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-players-table [dataArray]="game.players"></app-players-table>
+        <app-course-table [dataArray]="game.courses"></app-course-table>
+    </mat-expansion-panel>
+</span>
+</div>

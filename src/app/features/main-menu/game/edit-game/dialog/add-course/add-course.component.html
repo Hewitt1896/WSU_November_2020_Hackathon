@@ -1,0 +1,28 @@
+<form [formGroup]="formGroup">
+    <mat-form-field appearance="outline">
+        <mat-label>Course</mat-label>
+        <mat-select formControlName="courseCtrl">
+            <mat-option *ngFor="let course of data.courses" [value]="course">
+                {{course.name}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="courseControl().hasError('required')"> Select a par for all courses
+        </mat-error>
+    </mat-form-field>
+</form>
+<div fxLayout="column" fxLayoutAlign="space-around center">
+    <div>Add Course</div>
+    <span><button mat-mini-fab color="accent" (click)="addCourse(courseControl().value)">
+            <mat-icon>plus_one</mat-icon>
+        </button>
+    </span>
+    <ng-container *ngIf="addCourses.length > 0">
+        <h2>Courses Added</h2>
+        <mat-nav-list>
+            <a mat-list-item *ngFor="let addCourse of addCourses"> {{ addCourse.name }} </a>
+        </mat-nav-list>
+    </ng-container>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <button (click)="submit()" class="btn-hover">Submit</button>
+    </div>
+</div>

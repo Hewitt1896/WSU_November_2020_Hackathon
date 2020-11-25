@@ -1,0 +1,20 @@
+<mat-toolbar>
+    <div class="wrapper-toolbar" fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex>
+            <button mat-raised-button color="primary">
+                <a [routerLink]="['/main-menu/']">Back</a></button>
+        </div>
+        <div class="edit-title" fxFlex>Edit Game</div>
+        <div fxFlex></div>
+    </div>
+</mat-toolbar>
+<div class="wrapper-table" fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutAlign.xs="start start">
+
+    <button (click)="promptPlayerDialog()" class="button-prompt btn-hover">Add Player</button>
+    <button (click)="promptCourseDialog()" class="button-prompt btn-hover">Add Course</button>
+    <mat-slide-toggle [checked]="isToggled" (change)="changeScoreToggle()">{{scoreToggle}}</mat-slide-toggle>
+    <ng-container *ngFor="let course of thisGame.courses; index as i">
+        <h2>Course Name: {{course.name}}</h2>
+        <app-game-table [toggleScore]="isToggled" [dataArray]="course.players" [index]="i"></app-game-table>
+    </ng-container>
+</div>
