@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    console.log('this authstate: ', this.authService.authState);
   }
 
   public logout(): void {

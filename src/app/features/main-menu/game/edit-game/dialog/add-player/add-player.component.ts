@@ -38,7 +38,6 @@ export class AddPlayerComponent extends BaseForm implements OnInit {
     if (playerName !== '' && playerName !== undefined) {
       this.addPlayers.push(this.data.players.find(dataPlayer => dataPlayer.displayName === playerName));
       this.data.players.splice(this.data.players.findIndex(dataPlayer => dataPlayer.displayName === playerName), 1);
-      console.log("AddPlayerComponent -> addPlayer -> this.addPlayer", this.addPlayers)
       this.playerControl().setValue('');
     }
   }

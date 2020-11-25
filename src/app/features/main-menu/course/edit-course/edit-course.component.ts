@@ -162,7 +162,6 @@ export class EditCourseComponent extends BaseForm implements OnInit {
       this.thisCourse.pars[0].hole16 = this.hole16Control().value;
       this.thisCourse.pars[0].hole17 = this.hole17Control().value;
       this.thisCourse.pars[0].hole18 = this.hole18Control().value;
-      console.log('this course', this.thisCourse);
       this.courseDomainService.updateCourse(this.thisCourse).toPromise().then((data) => {
         this.toastConfirm('You have successfully updated a Course');
         this.notifyTabService.emitTab(0);

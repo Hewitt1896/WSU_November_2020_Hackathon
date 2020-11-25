@@ -37,7 +37,6 @@ export class CourseDomainService {
   }
 
   public updateCourse(course: Course) {
-    console.log('course object', course);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const options = { headers };
     return this.http.put(this.apiUrl, course, options);

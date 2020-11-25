@@ -79,10 +79,8 @@ export class SignupDialogComponent extends BaseForm implements OnInit {
     this.thisUser.handicap = this.handicapControl().value;
     this.userDomainService.saveUser(this.thisUser).subscribe(() => {
       let users = this.userDomainService.getAllUsers();
-      console.log('all users', users);
       this.userDomainService.setUser(this.thisUser);
       this.toastConfirm('You have successfully signed up');
-      console.log('set user', this.thisUser.email);
       this.userDomainService.matchUser(this.thisUser.email);
       this.router.navigateByUrl('main-menu');
       this.dialogRef.close();

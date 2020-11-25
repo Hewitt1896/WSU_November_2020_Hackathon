@@ -10,7 +10,8 @@
         </div>
     </div>
 </mat-toolbar>
-<form [formGroup]="formGroup" class="form-wrapper animate__animated animate__fadeIn animate__delay-1s">
+<div class="">
+<form [formGroup]="formGroup" class="animate__animated animate__fadeIn animate__delay-1s">
     <h4>Information</h4>
     <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
         <mat-form-field class="edit-name" appearance="outline">
@@ -28,11 +29,11 @@
         <mat-form-field class="form-field-hole" appearance="outline">
             <mat-label>Hole 1</mat-label>
             <mat-select formControlName="hole1Ctrl">
-                <mat-option *ngFor="let par of pars" [value]="par">
+                <mat-option *ngFor="let par of pars">
                     {{par}}
                 </mat-option>
             </mat-select>
-            <mat-error *ngIf="hole2Control().hasError('required')"> Hole2 is <strong>required</strong></mat-error>
+            <mat-error *ngIf="hole1Control().hasError('required')"> Hole1 is <strong>required</strong></mat-error>
         </mat-form-field>
         <mat-form-field class="form-field-hole" appearance="outline">
             <mat-label>Hole 2</mat-label>
@@ -192,3 +193,4 @@
         <button (click)="submit()" type="submit" class="btn-hover">Submit</button>
     </div>
 </form>
+</div>

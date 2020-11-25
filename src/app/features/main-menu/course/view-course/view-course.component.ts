@@ -22,9 +22,7 @@ export class ViewCourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.courseDomainService.getCourses().subscribe(data => {
-      console.log("ViewCourseComponent -> ngOnInit -> data", data)
       this.courses = data;
-      // console.log("ViewCourseComponent -> ngOnInit -> this.courses", this.courses)
       this.dataSource = new MatTableDataSource(this.courses);
     });
   }

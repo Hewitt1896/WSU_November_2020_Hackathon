@@ -53,7 +53,6 @@ export class EditGameComponent extends BaseForm implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     const tmpGames = this.gameDomainService.getMyGames();
     this.thisGame = tmpGames[this.id];
-    console.log('thisgame', this.thisGame);
   }
 
   ngOnInit(): void {

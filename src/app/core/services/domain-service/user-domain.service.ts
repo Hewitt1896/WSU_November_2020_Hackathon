@@ -67,7 +67,6 @@ export class UserDomainService {
   }
 
   public userExists(email: string): boolean {
-    console.log('thisusers', this.users);
     return this.users.some(user => user.email === email);
   }
 

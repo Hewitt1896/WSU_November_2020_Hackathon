@@ -62,7 +62,6 @@ export class CreateGameComponent extends BaseForm implements OnInit {
   }
 
   public addPlayer(playerName: string): void {
-    console.log("CreateGameComponent -> addPlayer -> playerName", playerName)
     if (playerName !== '' && playerName !== undefined) {
       this.addPlayers.push(this.players.find(player => player.displayName === playerName));
       this.players.splice(this.players.findIndex(player => player.displayName === playerName), 1);

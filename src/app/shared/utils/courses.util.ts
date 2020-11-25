@@ -7,6 +7,5 @@ export const filterCourses = (courses: Course[], allCourses: Course[]): Course[]
                 allCourses.splice(index, 1);
             }
         }));
-    console.log('tmpPlayers', allCourses);
     return allCourses;
 }

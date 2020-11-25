@@ -54,7 +54,6 @@ export class AccountComponent extends BaseForm implements OnInit {
     super.ngOnInit();
 
     this.thisUser = this.userDomainService.getThisUser();
-    console.log("AccountComponent -> ngOnInit -> this.thisUser ", this.thisUser)
 
     this.formGroup = this.formBuilder.group({
       displayNameCtrl: [this.thisUser.displayName, [Validators.required]],

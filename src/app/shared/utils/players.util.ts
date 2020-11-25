@@ -8,6 +8,5 @@ export const filterCoursePlayers = (coursePlayers: User[], allPlayers: User[]): 
                 allPlayers.splice(index, 1);
             }
         }));
-    console.log('tmpPlayers', allPlayers);
     return allPlayers;
 }
