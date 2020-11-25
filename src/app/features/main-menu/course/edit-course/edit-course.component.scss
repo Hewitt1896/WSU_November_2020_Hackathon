@@ -1,0 +1,42 @@
+@import '_button';
+
+.wrapper-toolbar {
+  width: 100%;
+}
+.edit-title {
+  text-align: center;
+}
+
+.edit-course-toolbar {
+  margin: 1vh 0 1vh;
+}
+
+a:-webkit-any-link {
+  color: goldenrod;
+}
+
+.mat-form-field {
+  margin: 1vw;
+}
+
+h4 {
+  text-align: center;
+}
+
+section {
+  padding: 2vw;
+}
+
+.course-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .mat-form-field {
+    width: 25vw;
+  }
+  .edit-name {
+    width: 75vw;
+  }
+}

@@ -1,0 +1,194 @@
+<div fxLayout="row" class="edit-course-toolbar" fxLayoutAlign="center center">        
+<button mat-icon-button>
+    <a [routerLink]="['/main-menu/']">Back</a></button>
+</div>
+<mat-toolbar class="edit-course-toolbar">
+    <div class="wrapper-toolbar" fxLayout="row" fxLayoutAlign="space-between center">        
+        <div fxFlex></div>
+        <div class="edit-title" fxFlex>Edit Course</div>
+        <div fxFlex>            
+        </div>
+    </div>
+</mat-toolbar>
+<form [formGroup]="formGroup">
+    <h4>Information</h4>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column">
+        <mat-form-field class="edit-name" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput #name maxlength="30" type="text" formControlName="nameCtrl"
+                placeholder="{{thisCourse.name}}">
+            <mat-hint align="end">{{name.value?.length || 0}}/30</mat-hint>
+            <mat-error *ngIf="nameControl().hasError('required')"> Name is <strong>required</strong>
+            </mat-error>
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+    </div>
+    <h4>Par</h4>
+    <div fxLayout="row wrap" class="course-wrapper" fxLayoutAlign="space-around center">
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 1</mat-label>
+            <mat-select formControlName="hole1Ctrl">
+                <mat-option *ngFor="let par of pars">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole1Control().hasError('required')"> Hole1 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 2</mat-label>
+            <mat-select formControlName="hole2Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole2Control().hasError('required')"> Hole2 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 3</mat-label>
+            <mat-select formControlName="hole3Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole3Control().hasError('required')"> Hole3 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 4</mat-label>
+            <mat-select formControlName="hole4Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole4Control().hasError('required')"> Hole4 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 5</mat-label>
+            <mat-select formControlName="hole5Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole5Control().hasError('required')"> Hole5 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 6</mat-label>
+            <mat-select formControlName="hole6Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole6Control().hasError('required')"> Hole6 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 7</mat-label>
+            <mat-select formControlName="hole7Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole7Control().hasError('required')"> Hole7 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 8</mat-label>
+            <mat-select formControlName="hole8Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole8Control().hasError('required')"> Hole8 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 8</mat-label>
+            <mat-select formControlName="hole9Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole9Control().hasError('required')"> Hole8 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 10</mat-label>
+            <mat-select formControlName="hole10Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole10Control().hasError('required')"> Hole10 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 11</mat-label>
+            <mat-select formControlName="hole11Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole11Control().hasError('required')"> Hole11 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 12</mat-label>
+            <mat-select formControlName="hole12Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole12Control().hasError('required')"> Hole12 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 13</mat-label>
+            <mat-select formControlName="hole13Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole13Control().hasError('required')"> Hole13 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 14</mat-label>
+            <mat-select formControlName="hole14Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole14Control().hasError('required')"> Hole14 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 15</mat-label>
+            <mat-select formControlName="hole15Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole15Control().hasError('required')"> Hole15 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 16</mat-label>
+            <mat-select formControlName="hole16Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole16Control().hasError('required')"> Hole16 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 17</mat-label>
+            <mat-select formControlName="hole17Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole17Control().hasError('required')"> Hole17 is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field-hole" appearance="outline">
+            <mat-label>Hole 18</mat-label>
+            <mat-select formControlName="hole18Ctrl">
+                <mat-option *ngFor="let par of pars" [value]="par">
+                    {{par}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="hole18Control().hasError('required')"> Hole18 is <strong>required</strong></mat-error>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <button (click)="submit()" type="submit" class="btn-hover">Submit</button>
+    </div>
+</form>

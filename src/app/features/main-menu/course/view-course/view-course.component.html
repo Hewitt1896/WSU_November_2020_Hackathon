@@ -1,0 +1,16 @@
+<div class="expansion-wrapper">
+    <span class="span-for" *ngFor="let course of courses;let i = index">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <span><a [routerLink]="['/main-menu/edit-course', i]" matTooltip="Edit" matTooltipPosition="above"
+                            routerLinkActive="active">
+                            <mat-icon>build</mat-icon>
+                        </a></span>
+                    <span class="course-name">{{course.name}}</span>                    
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-par-table [dataArray]="course.pars"></app-par-table>
+        </mat-expansion-panel>
+    </span>
+</div>

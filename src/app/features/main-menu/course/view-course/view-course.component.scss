@@ -1,0 +1,44 @@
+.outer-course-table {
+  width: 100vw;
+}
+
+td,
+th {
+  width: 10rem;
+}
+
+span a {
+  text-align: left;
+}
+span.course-name {
+  margin: 0 auto;
+}
+.expansion-wrapper {
+  margin-top: 5vh;
+}
+.mat-expansion-panel {
+  border-radius: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .mat-expansion-panel {
+    border-radius: 0;
+    min-width: 250vw;
+    margin: 0 auto;
+  }
+  .course-name {
+    left: 10rem;
+    position: absolute;
+  }
+}
