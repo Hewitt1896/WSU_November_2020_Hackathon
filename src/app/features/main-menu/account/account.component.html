@@ -1,9 +1,12 @@
 <mat-toolbar>
     <h2>Edit Account</h2>
 </mat-toolbar>
+<mat-card>
 <form [formGroup]="formGroup">
+    <div fxLayout="row" fxLayoutAlign="center center">
     <img src="{{thisUser.photoUrl}}">
-    <div fxLayout="column" fxLayoutAlign="space-around center">
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between center">
         <mat-form-field appearance="outline">
             <mat-label>Display Name</mat-label>
             <input matInput #displayName maxlength="30" type="text" formControlName="displayNameCtrl">
@@ -44,3 +47,4 @@
         <button (click)="submit()" type="submit" class="btn-hover">Submit</button>
     </div>
 </form>
+</mat-card>

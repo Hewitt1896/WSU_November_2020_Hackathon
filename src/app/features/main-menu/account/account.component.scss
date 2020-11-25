@@ -1,32 +1,38 @@
-@import "_button";
-@import "_button";
+@import '_button';
+@import '_button';
 
 .mat-toobar {
-    background-color: darkgoldenrod;
+  background-color: darkgoldenrod;
 }
 form {
-    margin-top: 2vh;
+  margin-top: 2vh;
 }
 h2 {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 h4 {
-    text-align: center;
+  text-align: center;
 }
 .mat-card {
-    width: 25vw;
-    height: fit-content;
-    margin: 5vh auto 5vh;
+  width: 25vw;
+  height: fit-content;
+  margin: 5vh auto 13vh;
+  background-color: #fafad2;
 }
 
 img {
-    border-radius: 8px;
-    width: 50%;
-    margin-left: 25%;
+  border-radius: 8px;
+  width: 50%;
+  margin: 0 auto;
 }
 @media only screen and (min-width: 1001px) {
-    img {
-        width: 10vw;
-        margin-left: 45%;
-    }
+  img {
+    width: 10vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .mat-card {
+    width: 75%;
+  }
 }
