@@ -1,0 +1,12 @@
+<span *ngFor="let course of dataArray;let j = index">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10vw">
+                    <div>Course Name:{{course.name}}</div>
+                </div>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-par-table [dataArray]="course.pars"></app-par-table>
+    </mat-expansion-panel>
+</span>

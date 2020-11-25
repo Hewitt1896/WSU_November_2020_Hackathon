@@ -1,0 +1,95 @@
+<table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="hole1">
+        <th mat-header-cell *matHeaderCellDef> Hole 1</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole1}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole2">
+        <th mat-header-cell *matHeaderCellDef> Hole 2</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole2}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole3">
+        <th mat-header-cell *matHeaderCellDef> Hole 3</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole3}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole4">
+        <th mat-header-cell *matHeaderCellDef> Hole 4</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole4}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole5">
+        <th mat-header-cell *matHeaderCellDef> Hole 5</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole5}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole6">
+        <th mat-header-cell *matHeaderCellDef> Hole 6</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole6}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole7">
+        <th mat-header-cell *matHeaderCellDef> Hole 7</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole7}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole8">
+        <th mat-header-cell *matHeaderCellDef> Hole 8</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole8}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole9">
+        <th mat-header-cell *matHeaderCellDef> Hole 9</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole9}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole10">
+        <th mat-header-cell *matHeaderCellDef> Hole 10</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole10}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole11">
+        <th mat-header-cell *matHeaderCellDef> Hole 11</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole11}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole12">
+        <th mat-header-cell *matHeaderCellDef> Hole 12</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole12}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole13">
+        <th mat-header-cell *matHeaderCellDef> Hole 13</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole13}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole14">
+        <th mat-header-cell *matHeaderCellDef> Hole 14</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole14}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole15">
+        <th mat-header-cell *matHeaderCellDef> Hole 15</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole15}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole16">
+        <th mat-header-cell *matHeaderCellDef> Hole 16</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole16}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole17">
+        <th mat-header-cell *matHeaderCellDef> Hole 17</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole17}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hole18">
+        <th mat-header-cell *matHeaderCellDef> Hole 18</th>
+        <td mat-cell *matCellDef="let par"> {{par.hole18}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="parColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: parColumns;"></tr>
+</table>

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './core/guard/auth.guard';
 import { HomeComponent } from './features/home/home.component';
+import { AuthGuard } from './core/guard/auth.guard';
+
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
   {
     path: 'main-menu',
     loadChildren: () => import('./features/main-menu/main-menu.module').then(m => m.MainMenuModule), canActivate: [AuthGuard]
-  }, 
+  },
   {
     path: '',
     redirectTo: '',

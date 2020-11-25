@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td class="player-name" mat-cell *matCellDef="let player"> {{player.displayName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let player"> {{player.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="handicap">
+        <th mat-header-cell *matHeaderCellDef> Handicap </th>
+        <td mat-cell *matCellDef="let player"> {{player.handicap}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef> Total </th>
+        <td mat-cell *matCellDef="let player"> {{player.total}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="playerColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: playerColumns;"></tr>
+</table>

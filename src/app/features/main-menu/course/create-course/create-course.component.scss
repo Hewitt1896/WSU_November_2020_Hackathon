@@ -1,0 +1,41 @@
+@import '_button';
+
+.mat-toobar {
+  background-color: darkgoldenrod;
+}
+form {
+  margin: 2vh 0 15vh;
+}
+.mat-card {
+  margin: 2vh auto 2vh;
+  width: 50%;
+}
+.mat-form-field {
+  margin: 1vw;
+}
+
+h2 {
+  margin: 0 auto;
+}
+
+h4 {
+  text-align: center;
+}
+
+.course-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1000px) {
+  .mat-form-field {
+    width: 25vw;
+  }
+  .edit-name {
+    width: 75vw;
+  }
+}
+@media only screen and (min-width: 1001px) {
+  h2 {
+    margin: 0 auto !important;
+  }
+}

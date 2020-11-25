@@ -1,0 +1,19 @@
+td,
+th {
+    width: 10rem;
+}
+tr td:first-child {
+    padding-left: 2.5rem;
+}
+tr td {
+    padding-left: 1rem;
+}
+th {
+    text-align: justify;
+}
+@media only screen and (max-width: 1000px) {
+    tr td,
+    tr th {
+        min-width: 2rem;
+    }
+}
