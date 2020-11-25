@@ -554,6 +554,10 @@ html {
 }
 @media only screen and (max-width: 1000px) {
   .app__text--1 div {
-    margin-left: 30%;
+    margin-left: 40%;
+  }
+  .app__text--2 div {
+    margin-left: 15% !important;
+    width: 300px;
   }
 }

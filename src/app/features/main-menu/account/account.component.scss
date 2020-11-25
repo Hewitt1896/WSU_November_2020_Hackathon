@@ -16,7 +16,7 @@ h4 {
 .mat-card {
   width: 25vw;
   height: fit-content;
-  margin: 5vh auto 13vh;
+  margin: 5vh auto 0;
   background-color: #fafad2;
 }
 
@@ -34,5 +34,6 @@ img {
 @media only screen and (max-width: 1000px) {
   .mat-card {
     width: 75%;
+    margin: 5vh auto 25vh;
   }
 }

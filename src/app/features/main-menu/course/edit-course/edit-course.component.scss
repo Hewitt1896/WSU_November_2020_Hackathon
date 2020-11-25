@@ -8,15 +8,20 @@
 }
 
 .edit-course-toolbar {
-  margin: 1vh 0 1vh;
+  margin: 1vh 0 0 0;
 }
 
 a:-webkit-any-link {
   color: goldenrod;
 }
 
+.form-wrapper {
+  margin: 0;
+  overflow: visible;
+}
+
 .mat-form-field {
-  margin: 1vw;
+  margin: 0;
 }
 
 h4 {
@@ -28,7 +33,7 @@ section {
 }
 
 .course-wrapper {
-  width: 60%;
+  width: 75%;
   margin: 0 auto;
 }
 
