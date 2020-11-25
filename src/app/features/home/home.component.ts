@@ -10,7 +10,7 @@ declare var $: any;
 export class HomeComponent implements OnInit {
   animation: any;
   nextSlide: any;
-  scrolledUp: any;
+  scrolledUp: any = {};
   $app: any;
   
   constructor(
@@ -24,9 +24,7 @@ export class HomeComponent implements OnInit {
       const $pageNav1 = $('.pages__item--1');
       const $pageNav2 = $('.pages__item--2');
       let curSlide = 1;
-    
-      
-    
+  
       let navigateDown = function () {
         if (curSlide > 1) return;
         this.scrolledUp = false;

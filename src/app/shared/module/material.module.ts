@@ -97,7 +97,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatAutocompleteModule,
         MatBadgeModule,
         MatBottomSheetModule,
-        MatButtonModule, 
+        MatButtonModule,
         MatButtonToggleModule,
         MatCardModule,
         MatCheckboxModule,

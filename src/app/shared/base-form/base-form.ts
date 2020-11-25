@@ -3,6 +3,7 @@ import { AbstractControl, FormArray, FormBuilder, FormGroup } from '@angular/for
 import { Subject } from 'rxjs';
 
 import { RequiredStateMatcher } from '../validator/error-state-matcher';
+import { FORM_MARK_TOUCHED } from '../utils/validation.util';
 
 export class BaseForm implements OnInit, OnDestroy {
 
@@ -32,5 +33,9 @@ export class BaseForm implements OnInit, OnDestroy {
             return formGroup && formGroup.invalid && (formGroup.dirty || formGroup.touched);
         }
         return false;
+    }
+
+    execFOrmValidation(): void {
+        FORM_MARK_TOUCHED(this.abstractControl);
     }
 }

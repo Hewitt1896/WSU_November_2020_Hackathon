@@ -1,0 +1,42 @@
+@import '_button';
+
+.mat-form-field {
+  width: 3rem;
+}
+
+.mat-select-value {
+  text-align: center;
+}
+
+.game-btn-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  tr td,
+  tr th {
+    max-width: 20vw;
+    width: 20vw;
+  }
+  .row-name {
+    min-width: 5rem;
+  }
+  .row-handicap,
+  .row-total {
+    min-width: 6rem;
+  }
+  .mat-form-field {
+    min-width: 3rem !important;
+    width: 3rem !important;
+    text-align: center;
+  }
+  button {
+    position: relative;
+    margin-left: 22.5vw !important;
+    margin-top: 5vh !important;
+  }
+  .game-submit-btn {
+    margin-right: 200vw !important;
+  }
+}

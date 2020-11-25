@@ -1,0 +1,316 @@
+<div fxLayout="column" fxLayoutAlign="start start">
+
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <th class="row-name" mat-header-cell *matHeaderCellDef> Name </th>
+            <td class="row-name" mat-cell *matCellDef="let player; let i = index"> {{player.displayName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="handicap">
+            <th class="row-handicap" mat-header-cell *matHeaderCellDef> Handicap </th>
+            <td class="row-handicap" mat-cell *matCellDef="let player; let i = index"> {{player.handicap}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="total">
+            <th class="row-total" mat-header-cell *matHeaderCellDef> Total </th>
+            <td class="row-total" mat-cell *matCellDef="let player; let i = index"> {{dataArray[i].score.total}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole1">
+            <th mat-header-cell *matHeaderCellDef> Hole 1</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole1"
+                        placeholder="{{dataArray[i].score.hole1}}">
+                    </ng-container>
+                    <ng-container *ngIf="toggleScore===false">
+                        <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole1Putt"
+                    placeholder="{{dataArray[i].score.hole1Putt}}">
+                    </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole2">
+            <th mat-header-cell *matHeaderCellDef> Hole 2</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole2"
+                        placeholder="{{dataArray[i].score.hole2}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole2Putt"
+                        placeholder="{{dataArray[i].score.hole2Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole3">
+            <th mat-header-cell *matHeaderCellDef> Hole 3</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole3"
+                        placeholder="{{dataArray[i].score.hole3}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole3Putt"
+                        placeholder="{{dataArray[i].score.hole3Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole4">
+            <th mat-header-cell *matHeaderCellDef> Hole 4</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole4"
+                        placeholder="{{dataArray[i].score.hole4}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole4Putt"
+                        placeholder="{{dataArray[i].score.hole4Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole5">
+            <th mat-header-cell *matHeaderCellDef> Hole 5</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole5"
+                        placeholder="{{dataArray[i].score.hole5}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole5Putt"
+                        placeholder="{{dataArray[i].score.hole5Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole6">
+            <th mat-header-cell *matHeaderCellDef> Hole 6</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole6"
+                        placeholder="{{dataArray[i].score.hole6}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole6Putt"
+                        placeholder="{{dataArray[i].score.hole6Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole7">
+            <th mat-header-cell *matHeaderCellDef> Hole 7</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole7"
+                        placeholder="{{dataArray[i].score.hole7}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole7Putt"
+                        placeholder="{{dataArray[i].score.hole7Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole8">
+            <th mat-header-cell *matHeaderCellDef> Hole 8</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole8"
+                        placeholder="{{dataArray[i].score.hole8}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole8Putt"
+                        placeholder="{{dataArray[i].score.hole8Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole9">
+            <th mat-header-cell *matHeaderCellDef> Hole 9</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole9"
+                        placeholder="{{dataArray[i].score.hole9}}">
+                </ng-container>
+                <ng-container *ngIf="toggleScore===false">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole9Putt"
+                placeholder="{{dataArray[i].score.hole9Putt}}">
+                </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole10">
+            <th mat-header-cell *matHeaderCellDef> Hole 10</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole10"
+                        placeholder="{{dataArray[i].score.hole10}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole10Putt"
+                        placeholder="{{dataArray[i].score.hole10Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole11">
+            <th mat-header-cell *matHeaderCellDef> Hole 11</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole11"
+                        placeholder="{{dataArray[i].score.hole11}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole11Putt"
+                        placeholder="{{dataArray[i].score.hole11Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole12">
+            <th mat-header-cell *matHeaderCellDef> Hole 12</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole12"
+                        placeholder="{{dataArray[i].score.hole12}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole12Putt"
+                        placeholder="{{dataArray[i].score.hole12Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole13">
+            <th mat-header-cell *matHeaderCellDef> Hole 13</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" [(ngModel)]="dataArray[i].score.hole13"
+                        placeholder="{{dataArray[i].score.hole13}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole13Putt"
+                        placeholder="{{dataArray[i].score.hole13Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole14">
+            <th mat-header-cell *matHeaderCellDef> Hole 14</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole14"
+                        placeholder="{{dataArray[i].score.hole14}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole14Putt"
+                        placeholder="{{dataArray[i].score.hole14Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole15">
+            <th mat-header-cell *matHeaderCellDef> Hole 15</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole15"
+                        placeholder="{{dataArray[i].score.hole15}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole15Putt"
+                        placeholder="{{dataArray[i].score.hole15Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole16">
+            <th mat-header-cell *matHeaderCellDef> Hole 16</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole16"
+                        placeholder="{{dataArray[i].score.hole16}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole16Putt"
+                        placeholder="{{dataArray[i].score.hole16Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole17">
+            <th mat-header-cell *matHeaderCellDef> Hole 17</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole17"
+                        placeholder="{{dataArray[i].score.hole17}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole17Putt"
+                        placeholder="{{dataArray[i].score.hole17Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hole18">
+            <th mat-header-cell *matHeaderCellDef> Hole 18</th>
+            <td mat-cell *matCellDef="let player; let i = index">
+                <mat-form-field appearance="outline">
+                    <ng-container *ngIf="toggleScore===true">
+                    <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole18"
+                        placeholder="{{dataArray[i].score.hole18}}">
+                        </ng-container>
+                        <ng-container *ngIf="toggleScore===false">
+                            <input matInput type="number" maxlength="2" [(ngModel)]="dataArray[i].score.hole18Putt"
+                        placeholder="{{dataArray[i].score.hole18Putt}}">
+                        </ng-container>
+                </mat-form-field>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef=" gameColumns">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: gameColumns;"></tr>
+    </table>
+    <div class = "game-btn-wrapper" fxLayout="row" fxLayoutAlign="center center">
+        <div>
+        <button (click)="submit()" class="game-submit-btn btn-hover">Submit</button>
+    </div>
+    </div>
+</div>

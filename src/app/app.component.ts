@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './core/services/auth.service';
 
 @Component({
@@ -6,12 +7,20 @@ import { AuthService } from './core/services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Golf-Management-App';
+export class AppComponent implements OnInit {
+  title = 'Three Bogeys';
+  
 
   constructor(
-    public authService: AuthService
-  ) { }
+    public authService: AuthService,
+    private router: Router
+  ) { 
+  }
+
+  public ngOnInit(): void {
+    console.log('this authstate: ', this.authService.authState);
+  }
+
   public logout(): void {
     this.authService.signOut();
   }

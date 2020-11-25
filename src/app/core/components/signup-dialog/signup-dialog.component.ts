@@ -5,6 +5,9 @@ import { BaseForm } from 'src/app/shared/base-form/base-form';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SignUpData, User } from 'src/app/model/model';
 import { UserDomainService } from '../../services/domain-service/user-domain.service';
+import { Router } from '@angular/router';
+import { ConfirmComponent } from 'src/app/shared/components/snack-bar/confirm/confirm.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup-dialog',
@@ -46,6 +49,8 @@ export class SignupDialogComponent extends BaseForm implements OnInit {
     protected formBuilder: FormBuilder,
     protected changeDetectorRef: ChangeDetectorRef,
     private userDomainService: UserDomainService,
+    private snackBar: MatSnackBar,
+    private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: SignUpData
   ) {
     super(formBuilder, changeDetectorRef);
@@ -72,7 +77,23 @@ export class SignupDialogComponent extends BaseForm implements OnInit {
     this.thisUser.title = this.titleControl().value;
     this.thisUser.age = this.ageControl().value;
     this.thisUser.handicap = this.handicapControl().value;
-    this.userDomainService.saveUser(this.thisUser).subscribe(() => { });
-    this.dialogRef.close();
+    this.userDomainService.saveUser(this.thisUser).subscribe(() => {
+      let users = this.userDomainService.getAllUsers();
+      console.log('all users', users);
+      this.userDomainService.setUser(this.thisUser);
+      this.toastConfirm('You have successfully signed up');
+      console.log('set user', this.thisUser.email);
+      this.userDomainService.matchUser(this.thisUser.email);
+      this.router.navigateByUrl('main-menu');
+      this.dialogRef.close();
+     });
+  }
+
+  public toastConfirm(message: string): void {
+    this.snackBar.openFromComponent(ConfirmComponent, {
+      data: message,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
   }
 }

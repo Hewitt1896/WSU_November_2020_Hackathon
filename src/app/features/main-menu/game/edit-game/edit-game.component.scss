@@ -1,22 +1,46 @@
-@import "_button";
+@import '_button';
 
 h2 {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+
+.game-toggle {
+  margin: 2vh 0 2vh;
 }
 
 .mat-toolbar {
-    background: #f5f5f5 !important;
-    color: rgba(0, 0, 0, 0.87);
+  background: #f5f5f5 !important;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.btn-wrapper {
+  margin: 2vh 0 2vh;
+  text-align: center;
+}
+
+.wrapper-toolbar {
+  width: 100%;
+  text-align: center;
+}
+.add-button:hover {
+  background-size: 150% 150%;
+  transform: rotate(360deg) scale(1.1);
 }
 
 @media only screen and (max-width: 1000px) {
-    app-game-table {
-        width: 275vw;
-    }
-    h2 {
-        margin: 0 0 0 2vw;
-    }
-    .button-prompt {
-        margin-left: 22.5vw !important;
-    }
+  app-game-table {
+    width: 275vw;
+  }
+  h2 {
+    margin: 0 0 0 2vw;
+  }
+  .button-prompt {
+    margin-left: 22.5vw !important;
+  }
+  .game-toggle {
+    margin-left: 45%;
+  }
+  .outer-btn-wrapper {
+    margin-left: 45vw;
+  }
 }

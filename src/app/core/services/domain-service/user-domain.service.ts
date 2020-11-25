@@ -17,7 +17,15 @@ export class UserDomainService {
   }
 
 
-  public setUser(email: string): void {
+  public setUser(user: User): void {    
+    this.thisUser = this.users.find(user => user.email === user.email);
+    if (this.thisUser == undefined) {
+      this.users.push(user)
+      this.thisUser = user;
+    }
+  }
+
+  public matchUser(email: string): void {
     this.thisUser = this.users.find(user => user.email === email);
   }
 

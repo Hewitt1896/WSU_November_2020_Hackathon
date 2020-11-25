@@ -1,4 +1,3 @@
-import { ConfirmComponent } from './../../shared/components/snack-bar/confirm/confirm.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable, NgZone } from '@angular/core';
@@ -8,8 +7,9 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { User } from 'src/app/model/model';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
+import { ConfirmComponent } from '../../shared/components/snack-bar/confirm/confirm.component';
 import { UserDomainService } from './domain-service/user-domain.service';
+import { MatDialog } from '@angular/material/dialog';
 import { SignupDialogComponent } from '../components/signup-dialog/signup-dialog.component';
 
 
@@ -20,7 +20,7 @@ import { SignupDialogComponent } from '../components/signup-dialog/signup-dialog
 export class AuthService {
   private _authState: User = null;
   private _user: Observable<User>;
-  private newUser: User;
+  public isLoggedIn = false;
   public get user(): Observable<User> {
     return this._user;
   }
@@ -74,7 +74,7 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return this.authState !== null;
+    return this.isLoggedIn === true;
   }
 
   get currentUserId(): string {
@@ -87,10 +87,13 @@ export class AuthService {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((credential) => this.ngZone.run(() => {
       if (!this.userDomainService.userExists(credential.user.email)) {
         this.openSignUpDialog(credential.user.email);
+        this.isLoggedIn = true;
       } else {
-        this.userDomainService.setUser(credential.user.email);
-        this.toastConfirm('You have successfully logged in');
+        this.isLoggedIn = true;
+        this.authState = {};
+        this.userDomainService.matchUser(credential.user.email);
         this.router.navigateByUrl('main-menu');
+        this.toastConfirm('You have successfully logged in');
       }
     }));
   }
@@ -116,9 +119,7 @@ export class AuthService {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.toastConfirm('You have successfully signed up');
-      this.userDomainService.setUser(userEmail);
-      this.router.navigateByUrl('main-menu');
+      
     });
   }
 }
