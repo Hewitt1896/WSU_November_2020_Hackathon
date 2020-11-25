@@ -1,3 +1,4 @@
+import { AuthService } from './core/services/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Three Bogeys';
+
+  constructor(
+    public authService: AuthService
+  ) { }
+  public logout(): void {
+    this.authService.signOut();
+  }
 }

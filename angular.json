@@ -140,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "golf-management-app"
+  "defaultProject": "golf-management-app",
+  "cli": {
+    "analytics": "d5720584-1789-4581-a77a-d745ad552347"
+  }
 }

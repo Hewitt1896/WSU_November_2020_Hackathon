@@ -1,0 +1,46 @@
+<mat-toolbar>
+    <h2>Create Account</h2>
+</mat-toolbar>
+<form [formGroup]="formGroup">
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-form-field appearance="outline">
+            <mat-label>Display Name</mat-label>
+            <input matInput #displayName maxlength="30" type="text" formControlName="displayNameCtrl">
+            <mat-hint align="end">{{displayName.value?.length || 0}}/30</mat-hint>
+            <mat-error *ngIf="displayNameControl().hasError('required')"> Display name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Photo URL</mat-label>
+            <input matInput type="text" formControlName="photoUrlCtrl"
+                placeholder="https://cdn0.iconfinder.com/data/icons/flat-design-business-set-3/24/people-customer-unknown-512.png">
+            <mat-error *ngIf="photoUrlControl().hasError('required')"> Photo URL is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput #name maxlength="30" type="text" formControlName="titleCtrl" placeholder="Newcomer">
+            <mat-hint align="end">{{name.value?.length || 0}}/30</mat-hint>
+            <mat-error *ngIf="titleControl().hasError('required')"> Title is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Handicap</mat-label>
+            <input matInput maxlength="3" type="text" formControlName="handicapCtrl">
+            <mat-error *ngIf="handicapControl().hasError('required')"> Handicap is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Age</mat-label>
+            <mat-select formControlName="ageCtrl">
+                <mat-option *ngFor="let age of ages" [value]="age">
+                    {{age}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="ageControl().hasError('required')"> Age is <strong>required</strong></mat-error>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <button (click)="submit()" class="btn-hover">Submit</button>
+    </div>
+</form>
