@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CourseDomainService } from 'src/app/core/services/domain-service/course-domain.service';
 import { NotifyTabService } from 'src/app/core/services/emit/notify-tab.service';
 import { Course } from 'src/app/model/model';
@@ -104,6 +104,7 @@ export class EditCourseComponent extends BaseForm implements OnInit {
     protected formBuilder: FormBuilder,
     protected changeDetectorRef: ChangeDetectorRef,
     private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     super(formBuilder, changeDetectorRef);
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -161,9 +162,11 @@ export class EditCourseComponent extends BaseForm implements OnInit {
       this.thisCourse.pars[0].hole16 = this.hole16Control().value;
       this.thisCourse.pars[0].hole17 = this.hole17Control().value;
       this.thisCourse.pars[0].hole18 = this.hole18Control().value;
-      this.courseDomainService.saveCourse(this.thisCourse).toPromise().then((data) => {
-        this.toastConfirm('You have successfully created a Course');
+      console.log('this course', this.thisCourse);
+      this.courseDomainService.updateCourse(this.thisCourse).toPromise().then((data) => {
+        this.toastConfirm('You have successfully updated a Course');
         this.notifyTabService.emitTab(0);
+        this.router.navigateByUrl('main-menu')
       });
     }
   }

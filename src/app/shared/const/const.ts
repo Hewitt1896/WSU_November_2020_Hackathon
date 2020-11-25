@@ -32,3 +32,4 @@ export const GAMECOLUMNS: string[] = ['name', 'handicap', 'total', 'hole1', 'hol
 export const GAME_API_URL = 'https://3f6uui6qmj.execute-api.us-east-1.amazonaws.com/Dev/game';
 export const COURSE_API_URL = 'https://3f6uui6qmj.execute-api.us-east-1.amazonaws.com/Dev/course';
 export const USER_API_URL = 'https://3f6uui6qmj.execute-api.us-east-1.amazonaws.com/Dev/users';
+export const UPDATE_COURSE_URL = 'https://3f6uui6qmj.execute-api.us-east-1.amazonaws.com/Dev/updateCourse';
