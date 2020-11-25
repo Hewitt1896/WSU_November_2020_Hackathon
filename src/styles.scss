@@ -2,23 +2,25 @@
 
 html,
 body {
-    height: 100%;
+  height: 100%;
+  min-width: 100vw;
 }
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  overflow: hidden;
 }
 
 div.mat-tab-body-content {
-    height: 100vh;
+  height: 100vh;
 }
 
 snack-bar-container {
-    text-align: center;
+  text-align: center;
 }
 
 .form-field-hole {
-    width: 8vw;
+  width: 8vw;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -29,14 +31,23 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
+mat-icon {
+  transition: background-size 0.3s ease-out, color 0.1s 0.1s, transform 0.3s;
+}
+
+mat-icon:hover {
+  background-size: 150% 150%;
+  transform: rotate(360deg) scale(1.1);
+}
+
 @media only screen and (max-width: 1000px) {
-    .mat-expansion-panel {
-        border-radius: 0;
-        min-width: 250vw;
-        margin: 0 auto;
-    }
+  .mat-expansion-panel {
+    border-radius: 0;
+    min-width: 250vw;
+    margin: 0 auto;
+  }
 }
