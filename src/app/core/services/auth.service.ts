@@ -83,13 +83,12 @@ export class AuthService {
 
   // Firebase Google Sign-in
   public signinGoogle() {
+    this.isLoggedIn = true;
     this.userDomainService.fetchUsers();
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((credential) => this.ngZone.run(() => {
       if (!this.userDomainService.userExists(credential.user.email)) {
         this.openSignUpDialog(credential.user.email);
-        this.isLoggedIn = true;
       } else {
-        this.isLoggedIn = true;
         this.authState = {};
         this.userDomainService.matchUser(credential.user.email);
         this.router.navigateByUrl('main-menu');
